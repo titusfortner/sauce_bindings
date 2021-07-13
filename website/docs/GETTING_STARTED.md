@@ -40,26 +40,60 @@ values={[
 
 1. Install ***Java version 8*** or greater
 2. Install your favorite Java IDE (we really like IntelliJ and the Community Edition is free).
-3. The project is designed as a standard Maven project and follows Maven conventions.
-Add the following to your .pom file:
+3. Choose your [test runner](test-runners/) below, or use the Sauce Bindings directly without test runner support:
+
+<Tabs
+defaultValue="junit"
+values={[
+{ label: 'JUnit', value: 'junit', },
+{ label: 'TestNG', value: 'testng', },
+{ label: 'Direct', value: 'direct', },
+]
+}>
+
+<TabItem value="junit">
+
+3. Add the following to your `.pom` file:
 
 ```xml
-<!-- https://mvnrepository.com/artifact/com.saucelabs/sauce_bindings -->
+<!-- https://mvnrepository.com/artifact/com.saucelabs/sauce_bindings_junit4/latest -->
 <dependency>
     <groupId>com.saucelabs</groupId>
-    <artifactId>sauce_bindings</artifactId>
-    <version>1.0.1</version>
+    <artifactId>sauce_bindings_junit4</artifactId>
+    <version>1.0.0</version>
 </dependency>
 ```
 
-Examples in the docs are written to use JUnit 4, so to execute the examples you must also add this to your .pom file:
+</TabItem>
+<TabItem value="testng">
+
+3. Add the following to your `.pom` file:
+
 ```xml
+<!-- https://mvnrepository.com/artifact/com.saucelabs/sauce_bindings_testng/latest -->
 <dependency>
-    <groupId>junit</groupId>
-    <artifactId>junit</artifactId>
-    <version>4.13</version>
+    <groupId>com.saucelabs</groupId>
+    <artifactId>sauce_bindings_testng</artifactId>
+    <version>1.0.0</version>
 </dependency>
-``` 
+```
+
+</TabItem>
+<TabItem value="direct">
+
+3. Add the following to your `.pom` file:
+
+```xml
+<!-- https://mvnrepository.com/artifact/com.saucelabs/sauce_bindings/latest -->
+<dependency>
+    <groupId>com.saucelabs</groupId>
+    <artifactId>sauce_bindings</artifactId>
+    <version>1.2.0</version>
+</dependency>
+```
+
+</TabItem>
+</Tabs>
 
 </TabItem>
 <TabItem value="python">

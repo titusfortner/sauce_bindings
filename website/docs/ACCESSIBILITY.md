@@ -35,21 +35,21 @@ values={[
 <TabItem value="java">
 
 ```java reference
-https://github.com/saucelabs/sauce_bindings/tree/java-1.2.0/java/main/src/main/java/com/saucelabs/saucebindings/examples/AccessibilityTest.java
+https://github.com/titusfortner/sauce_bindings/blob/ca7011b4/java/main/src/test/java/com/saucelabs/saucebindings/examples/AccessibilityTest.java
 ```
 
 </TabItem>
 <TabItem value="python">
 
 ```python reference
-https://github.com/saucelabs/sauce_bindings/tree/java-1.2.0/python/tests/examples/test_accessibility.py
+https://github.com/titusfortner/sauce_bindings/blob/ca7011b4/python/tests/examples/test_accessibility.py
 ```
 
 </TabItem>
 <TabItem value="ruby">
 
 ```ruby reference
-https://github.com/saucelabs/sauce_bindings/tree/java-1.2.0/ruby/spec/examples/accessibility_spec.rb
+https://github.com/titusfortner/sauce_bindings/blob/ca7011b4/ruby/spec/examples/accessibility_spec.rb
 ```
 
 </TabItem>

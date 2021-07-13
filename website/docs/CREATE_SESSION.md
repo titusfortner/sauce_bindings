@@ -23,22 +23,53 @@ values={[
 
 <TabItem value="java">
 
+Select the [test runner](test-runners/) tab based on which library you [added to your `.pom` file](getting-started#language-specific--prerequisites)
+
+<Tabs
+defaultValue="junit"
+values={[
+{ label: 'JUnit', value: 'junit', },
+{ label: 'TestNG', value: 'testng', },
+{ label: 'Direct', value: 'direct', },
+]
+}>
+
+<TabItem value="junit">
+
 ```java reference
-https://github.com/saucelabs/sauce_bindings/tree/java-1.2.0/java/main/src/main/java/com/saucelabs/saucebindings/examples/SessionTest.java
+https://github.com/titusfortner/sauce_bindings/blob/ca7011b4/java/junit4/src/test/java/com/saucelabs/saucebindings/junit4/examples/SessionTest.java
 ```
+
+</TabItem>
+<TabItem value="testng">
+
+```java reference
+https://github.com/titusfortner/sauce_bindings/blob/ca7011b4/java/testng/src/test/java/com/saucelabs/saucebindings/testng/examples/SessionTest.java
+```
+
+</TabItem>
+<TabItem value="direct">
+
+```java reference
+https://github.com/titusfortner/sauce_bindings/blob/ca7011b4/java/main/src/test/java/com/saucelabs/saucebindings/examples/SessionTest.java
+```
+
+</TabItem>
+</Tabs>
+
 
 </TabItem>
 <TabItem value="python">
 
 ```python reference
-https://github.com/saucelabs/sauce_bindings/tree/java-1.2.0/python/tests/examples/test_create_session.py
+https://github.com/titusfortner/sauce_bindings/blob/ca7011b4/python/tests/examples/test_create_session.py
 ```
 
 </TabItem>
 <TabItem value="ruby">
 
 ```ruby reference
-https://github.com/saucelabs/sauce_bindings/tree/java-1.2.0/ruby/spec/examples/create_session_spec.rb
+https://github.com/titusfortner/sauce_bindings/blob/ca7011b4/ruby/spec/examples/create_session_spec.rb
 ```
 
 </TabItem>

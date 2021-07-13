@@ -24,21 +24,21 @@ values={[
 <TabItem value="java">
 
 ```java reference
-https://github.com/saucelabs/sauce_bindings/tree/java-1.2.0/java/main/src/main/java/com/saucelabs/saucebindings/examples/BrowserOptionsTest.java
+https://github.com/titusfortner/sauce_bindings/blob/ca7011b4/java/main/src/test/java/com/saucelabs/saucebindings/examples/BrowserOptionsTest.java
 ```
 
 </TabItem>
 <TabItem value="python">
 
 ```python reference
-https://github.com/saucelabs/sauce_bindings/tree/java-1.2.0/python/tests/examples/test_browser_options.py
+https://github.com/titusfortner/sauce_bindings/blob/ca7011b4/python/tests/examples/test_browser_options.py
 ```
 
 </TabItem>
 <TabItem value="ruby">
 
 ```ruby reference
-https://github.com/saucelabs/sauce_bindings/tree/java-1.2.0/ruby/spec/examples/browser_options_spec.rb
+https://github.com/titusfortner/sauce_bindings/blob/ca7011b4/ruby/spec/examples/browser_options_spec.rb
 ```
 
 </TabItem>

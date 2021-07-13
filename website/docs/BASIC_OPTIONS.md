@@ -30,22 +30,53 @@ values={[
 
 <TabItem value="java">
 
+You can either use Sauce Bindings directly or with the JUnit 4 or TestNG packages
+
+<Tabs
+defaultValue="direct"
+values={[
+{ label: 'Direct', value: 'direct', },
+{ label: 'JUnit', value: 'junit', },
+{ label: 'TestNG', value: 'testng', },
+]
+}>
+
+<TabItem value="direct">
+
 ```java reference
-https://github.com/saucelabs/sauce_bindings/tree/java-1.2.0/java/main/src/main/java/com/saucelabs/saucebindings/examples/BasicOptionsTest.java
+https://github.com/titusfortner/sauce_bindings/blob/ca7011b4/java/main/src/test/java/com/saucelabs/saucebindings/examples/BasicOptionsTest.java
 ```
+
+</TabItem>
+<TabItem value="junit">
+
+```java reference
+https://github.com/titusfortner/sauce_bindings/blob/ca7011b4/java/junit4/src/test/java/com/saucelabs/saucebindings/junit4/examples/BasicOptionsTest.java
+```
+
+</TabItem>
+<TabItem value="testng">
+
+```java reference
+https://github.com/titusfortner/sauce_bindings/blob/ca7011b4/java/testng/src/test/java/com/saucelabs/saucebindings/testng/examples/BasicOptionsTest.java
+```
+
+</TabItem>
+</Tabs>
+
 
 </TabItem>
 <TabItem value="python">
 
 ```python reference
-https://github.com/saucelabs/sauce_bindings/tree/java-1.2.0/python/tests/examples/test_basic_options.py
+https://github.com/titusfortner/sauce_bindings/blob/ca7011b4/python/tests/examples/test_basic_options.py
 ```
 
 </TabItem>
 <TabItem value="ruby">
 
 ```ruby reference
-https://github.com/saucelabs/sauce_bindings/tree/java-1.2.0/ruby/spec/examples/basic_options_spec.rb
+https://github.com/titusfortner/sauce_bindings/blob/ca7011b4/ruby/spec/examples/basic_options_spec.rb
 ```
 
 </TabItem>
