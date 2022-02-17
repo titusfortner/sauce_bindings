@@ -1,6 +1,6 @@
 package com.saucelabs.saucebindings.integration;
 
-import com.saucelabs.saucebindings.PerformanceMetrics;
+import com.saucelabs.saucebindings.PerformanceResults;
 import com.saucelabs.saucebindings.SaucePerformanceException;
 import com.saucelabs.saucebindings.SauceSession;
 import com.saucelabs.saucebindings.options.SauceOptions;
@@ -66,7 +66,7 @@ public class PerformanceTest {
     public void performanceDetails() {
         setup();
 
-        PerformanceMetrics performanceMetrics = session.performance().getCurrentPageMetrics();
+        PerformanceResults performanceMetrics = session.performance().getCurrentPageMetrics();
         Assert.assertTrue(performanceMetrics.getLoad() > 0);
     }
 }
