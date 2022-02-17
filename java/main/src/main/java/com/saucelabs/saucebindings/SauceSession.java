@@ -106,6 +106,13 @@ public class SauceSession {
         return builder.analyze(driver);
     }
 
+    public Performance performance() {
+        if (!sauceOptions.getBrowserName().equals(Browser.CHROME) || sauceOptions.sauce().getCapturePerformance() == null) {
+            throw new SaucePerformanceException("Can not use performance methods without using `setCapturePerformance()`");
+        }
+        return new Performance(driver, sauceOptions.sauce().getName());
+    }
+
     /**
      * Ends the session on Sauce Labs and quits the driver.
      * It requires reporting whether the test has passed or failed.

@@ -1,5 +1,6 @@
 package com.saucelabs.saucebindings;
 
+import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableList;
 import com.saucelabs.saucebindings.options.SauceOptions;
 import org.junit.Assert;
@@ -16,6 +17,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.HashMap;
 
 public class SauceSessionTest {
     private SauceOptions sauceOptions = Mockito.spy(new SauceOptions());
@@ -244,5 +246,42 @@ public class SauceSessionTest {
         sauceSession.start();
         sauceSession.addTags(ImmutableList.of("foo", "bar"));
         Mockito.verify(dummyRemoteDriver).executeScript("sauce:job-tags=foo,bar");
+    }
+
+    @Test
+    public void validatePerformanceFails() {
+        SauceOptions sauceOptions = spy(SauceOptions.chrome().setName("Test Name").setCapturePerformance().build());
+        SauceSession sauceSession = spy(new SauceSession(sauceOptions));
+
+        doReturn(dummyRemoteDriver).when(sauceSession).createRemoteWebDriver(any(URL.class), any(MutableCapabilities.class));
+        doReturn(ImmutableMap.of("result", "failed", "reason", "because", "details", ImmutableMap.of("does", "not matter")))
+                .when(dummyRemoteDriver).executeScript(any(String.class), any(HashMap.class));
+
+        sauceSession.start();
+        try {
+            sauceSession.performance().validate();
+        } catch (SaucePerformanceException ex) {
+            assertEquals("because\n" + "{does=not matter}", ex.getMessage());
+        }
+        HashMap<String, Object> perf = new HashMap<>();
+        perf.put("name", "Test Name");
+        verify(dummyRemoteDriver).executeScript("sauce:performance", perf);
+    }
+
+    @Test
+    public void validatePerformanceSucceeds() {
+        SauceOptions sauceOptions = spy(SauceOptions.chrome().setName("Test Name").setCapturePerformance().build());
+        SauceSession sauceSession = spy(new SauceSession(sauceOptions));
+
+        doReturn(dummyRemoteDriver).when(sauceSession).createRemoteWebDriver(any(URL.class), any(MutableCapabilities.class));
+        doReturn(ImmutableMap.of("result", "pass"))
+                .when(dummyRemoteDriver).executeScript(any(String.class), any(HashMap.class));
+
+        sauceSession.start();
+        sauceSession.performance().validate();
+
+        HashMap<String, Object> perf = new HashMap<>();
+        perf.put("name", "Test Name");
+        verify(dummyRemoteDriver).executeScript("sauce:performance", perf);
     }
 }
