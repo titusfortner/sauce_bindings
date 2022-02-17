@@ -1,4 +1,4 @@
-package com.saucelabs.saucebindings;
+package com.saucelabs.saucebindings.performance;
 
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -52,4 +52,8 @@ public class Performance {
         return new PerformanceResults(metrics);
     }
 
+    public Jankiness getJankiness() {
+        Map<String, Object> jankiness = (Map<String, Object>) driver.executeScript("sauce:jankinessCheck");
+        return new Jankiness(jankiness);
+    }
 }

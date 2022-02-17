@@ -4,6 +4,8 @@ import com.deque.html.axecore.results.Results;
 import com.deque.html.axecore.selenium.AxeBuilder;
 import com.saucelabs.saucebindings.options.BaseConfigurations;
 import com.saucelabs.saucebindings.options.SauceOptions;
+import com.saucelabs.saucebindings.performance.Performance;
+import com.saucelabs.saucebindings.performance.SaucePerformanceException;
 import lombok.Getter;
 import lombok.Setter;
 import org.openqa.selenium.Capabilities;

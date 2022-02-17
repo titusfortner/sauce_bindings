@@ -3,6 +3,7 @@ package com.saucelabs.saucebindings;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableList;
 import com.saucelabs.saucebindings.options.SauceOptions;
+import com.saucelabs.saucebindings.performance.SaucePerformanceException;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Rule;

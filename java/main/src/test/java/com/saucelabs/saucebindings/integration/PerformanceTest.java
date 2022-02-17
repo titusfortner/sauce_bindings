@@ -1,9 +1,10 @@
 package com.saucelabs.saucebindings.integration;
 
-import com.saucelabs.saucebindings.PerformanceResults;
-import com.saucelabs.saucebindings.SaucePerformanceException;
 import com.saucelabs.saucebindings.SauceSession;
 import com.saucelabs.saucebindings.options.SauceOptions;
+import com.saucelabs.saucebindings.performance.Jankiness;
+import com.saucelabs.saucebindings.performance.PerformanceResults;
+import com.saucelabs.saucebindings.performance.SaucePerformanceException;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Rule;
@@ -68,5 +69,13 @@ public class PerformanceTest {
 
         PerformanceResults performanceMetrics = session.performance().getCurrentPageMetrics();
         Assert.assertTrue(performanceMetrics.getLoad() > 0);
+    }
+
+    @Test
+    public void jankinessResults() {
+        setup();
+
+        Jankiness jankinessResults = session.performance().getJankiness();
+        Assert.assertTrue(jankinessResults.getScore() > 0.7);
     }
 }

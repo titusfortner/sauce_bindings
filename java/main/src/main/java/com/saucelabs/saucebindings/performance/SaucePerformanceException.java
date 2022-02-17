@@ -1,4 +1,4 @@
-package com.saucelabs.saucebindings;
+package com.saucelabs.saucebindings.performance;
 
 public class SaucePerformanceException extends RuntimeException {
     public SaucePerformanceException(String message) {
